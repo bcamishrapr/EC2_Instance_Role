@@ -1,0 +1,35 @@
+---
+- name: "Provisioning Instance for Kube-Master"
+  ec2:
+      key_name: "{{key_name}}"
+      instance_type: "{{instance_type}}"
+      image: "{{ami_id}}"
+      wait: yes
+      count: 1
+      instance_tags:
+         Name: Kube_Master
+      #vpc_subnet_id: "{{vpc_id}}"
+      #assign_public_ip: yes
+      region: "{{region_name}}"
+      state: present
+      group_id: "{{sg_name}}"
+      aws_access_key: "{{access_key}}"
+      aws_secret_key: "{{secret_key}}"
+
+- name: "Provisioning Instance for Kube_Slave"
+  ec2:
+      key_name: "{{key_name}}"
+      instance_type: "{{instance_type}}"
+      image: "{{ami_id}}"
+      wait: yes
+      count: 2
+      instance_tags:
+         Name: Kube_Slave
+      #vpc_subnet_id: "{{vpc_id}}"
+      #assign_public_ip: yes
+      region: "{{region_name}}"
+      state: present
+      group_id: "{{sg_name}}"
+      aws_access_key: "{{access_key}}"
+      aws_secret_key: "{{secret_key}}"
+

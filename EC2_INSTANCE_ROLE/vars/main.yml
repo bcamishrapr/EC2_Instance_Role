@@ -1,0 +1,11 @@
+---
+# vars file for kube_nodes
+key_name: "kube_key"
+instance_type: "t2.micro"
+ami_id: "ami-010aff33ed5991201"
+vpc_id: "vpc-2ed53f45"
+region_name: "ap-south-1"
+sg_name: "sg-0f319e8d377ca06af"
+access_key: "xxxxxxxxxxxx"
+secret_key: "xxxxxx"
+
